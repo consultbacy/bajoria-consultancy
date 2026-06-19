@@ -1,0 +1,147 @@
+/* ============================================
+   Bajoria Consultancy - Custom Styles
+   Additional styles beyond Tailwind CDN
+   ============================================ */
+
+/* Smooth scrolling (also set on html in index.html) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar shadow on scroll */
+.navbar-scrolled {
+  box-shadow: 0 1px 0 0 rgba(15, 23, 42, 0.06);
+}
+
+.dark .navbar-scrolled {
+  box-shadow: 0 1px 0 0 rgba(15, 23, 42, 0.4);
+}
+
+/* Professional card styling */
+.value-card,
+.service-card,
+.process-step {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.value-card:hover,
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.dark .value-card:hover,
+.dark .service-card:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+}
+
+/* Process timeline connectors */
+.process-connector {
+  position: relative;
+}
+
+.process-connector::after {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 3rem;
+  bottom: -1rem;
+  width: 2px;
+  background: linear-gradient(to bottom, #64748b, #64748b);
+  opacity: 0.2;
+}
+
+.dark .process-connector::after {
+  background: linear-gradient(to bottom, #64748b, #64748b);
+}
+
+@media (min-width: 768px) {
+  .process-connector::after {
+    left: 50%;
+    top: 2.5rem;
+    height: 2px;
+    width: calc(100% - 5rem);
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #64748b, #64748b);
+  }
+}
+
+/* Form input styling */
+.input {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.1);
+}
+
+.dark .input:focus {
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.2);
+}
+
+/* Success message animation */
+.success-message {
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle section entrance */
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+  transition: max-height 0.3s ease, opacity 0.2s ease;
+  overflow: hidden;
+}
+
+/* Professional button styles */
+.btn-primary {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgb(30 58 138 / 0.25), 0 4px 6px -4px rgb(30 58 138 / 0.25);
+}
+
+/* Icon container */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #e2e8f0;
+}
+
+.dark footer {
+  border-top-color: #334155;
+} 
